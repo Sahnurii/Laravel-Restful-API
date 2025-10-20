@@ -1,0 +1,36 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Contact API",
+        "version": "1.0.0",
+        "description": "Contact API"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000",
+            "description": "Local server Laravel"
+        }
+    ],
+    "paths": {
+        "/api/contacts" : {
+            "post" : {
+                "description": "Create New Contact"
+            },
+            "get" : {
+                "description": "Seacrh Contact"
+            }
+        },
+        "/api/contacts/{id}" : {
+            "put" : {
+                "description": "Update Contact"
+            },
+            "get" : {
+                "description": "Get Contact"
+            },
+            "delete" : {
+                "description": "Remove Contact"
+            }
+
+        }
+    }
+}
