@@ -180,7 +180,10 @@
                 "parameters": [
                     {
                         "name": "Authorization",
-                        "in": "header"
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "responses": {
@@ -220,7 +223,10 @@
                 "parameters": [
                     {
                         "name": "Authorization",
-                        "in": "header"
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "requestBody": {
@@ -280,7 +286,10 @@
                 "parameters": [
                     {
                         "name": "Authorization",
-                        "in": "header"
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "responses": {
