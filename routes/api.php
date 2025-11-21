@@ -1,13 +1,19 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/users', [UserController::class, 'register']);
 Route::post('/users/login', [UserController::class, 'login']);
 
-Route::middleware(\App\Http\Middleware\ApiAuthMiddleware::class)->group(function (){
-    Route::get('users/current', [\App\Http\Controllers\UserController::class, 'get']);
-    Route::patch('users/current', [\App\Http\Controllers\UserController::class, 'update']);
-    Route::delete('users/logout', [\App\Http\Controllers\UserController::class, 'logout']);
+Route::middleware(\App\Http\Middleware\ApiAuthMiddleware::class)->group(function () {
+    Route::get('users/current', [UserController::class, 'get']);
+    Route::patch('users/current', [UserController::class, 'update']);
+    Route::delete('users/logout', [UserController::class, 'logout']);
+
+    Route::post('/contacts', [ContactController::class, 'create']);
+    Route::get('/contacts/{id}', [ContactController::class, 'get'])->where('id', '[0-9]+');
+    Route::put('/contacts/{id}', [ContactController::class, 'update'])->where('id', '[0-9]+');
 });
+
